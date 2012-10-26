@@ -4268,7 +4268,7 @@
     <string name="header_category_rom_settings">ASS</string>
 
 	<!--OTA SHORTCUT -->
-	<string name="ota_app_title">OTA</string>
+	<!-- <string name="ota_app_title">OTA</string> -->
 
     <!-- Launcher settings  -->
     <string name="launcher_settings_title">Launcher</string>
