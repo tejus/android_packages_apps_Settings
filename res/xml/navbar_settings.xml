@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    
+
     <CheckBoxPreference
         android:key="enable_nav_bar"
         android:title="@string/navbar_enable_bar" />
@@ -37,14 +37,6 @@
         android:title="@string/advanced_settings">
 
         <ListPreference
-            android:entries="@array/glow_times_entries"
-            android:entryValues="@array/glow_times_values"
-            android:key="glow_times"
-            android:title="@string/glow_times_title"
-            android:defaultValue="100|10"
-            android:persistent="false" />
-
-        <ListPreference
             android:entries="@array/navigation_bar_height_entries"
             android:entryValues="@array/navigation_bar_height"
             android:key="navigation_bar_height"
@@ -66,20 +58,19 @@
             android:summary="@string/navigation_bar_width_summary" />
 
     </PreferenceCategory>
-
     <PreferenceCategory
         android:key="navigation_bar_style"
         android:title="@string/navigation_bar_style">
 
-        <com.android.settings.cnd.ColorPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="interface_navbar_color"
             android:title="@string/interface_navbar_color_title"
-            android:summary="@string/interface_navbar_color_summary" />
-    
-        <Preference
-            android:key="interface_navbar_color_default"
-            android:title="@string/interface_navbar_restore_stock_color"
-            android:summary="@string/interface_navbar_restore_stock_color_summary" />
+            android:summary="@string/interface_navbar_color_summary"
+		    android:defaultValue="#000000" />
+
+        <com.android.settings.widgets.SeekBarPreference
+             android:key="nav_bar_transparency"
+             android:title="@string/nav_bar_transparency_title" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="nav_button_color"
@@ -93,10 +84,34 @@
             android:summary="@string/navigation_bar_glow_tint_summary"
             android:defaultValue="#FFFFFF" />
 
+        <ListPreference
+            android:entries="@array/glow_times_entries"
+            android:entryValues="@array/glow_times_values"
+            android:key="glow_times"
+            android:title="@string/glow_times_title"
+            android:defaultValue="100|10"
+            android:persistent="false" />
+
         <com.android.settings.widgets.SeekBarPreference
             android:key="button_transparency"
             android:title="@string/button_transparency_title" />
 
     </PreferenceCategory>
+    <PreferenceCategory
+        android:key="navbar_ring"
+        android:title="@string/navbar_ring_cat">
 
+        <ListPreference
+            android:entries="@array/pref_navring_amount_entries"
+            android:entryValues="@array/pref_navring_amount_values"
+            android:key="pref_navring_amount"
+            android:title="@string/title_navring_amount"
+            android:summary="@string/summary_navring_amount" />
+        
+        <Preference
+            android:key="navring_settings"
+            android:title="@string/interface_navring_settings_title"
+            android:summary="@string/interface_navring_settings_summary" />
+
+    </PreferenceCategory>
 </PreferenceScreen>

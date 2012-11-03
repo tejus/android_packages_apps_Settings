@@ -1409,6 +1409,22 @@
         <item>2</item>
     </string-array>
 
+    <string-array name="lockscreen_long_key_press_entries" translatable="false">
+        <item>@string/lockscreen_buttons_no_action</item>
+        <item>@string/lockscreen_buttons_next</item>
+        <item>@string/lockscreen_buttons_previous</item>
+        <item>@string/lockscreen_buttons_playpause</item>
+        <item>@string/lockscreen_buttons_toggle_sound</item>
+    </string-array>
+
+    <string-array name="lockscreen_long_key_press_values" translatable="false">
+        <item></item>
+        <item>NEXT</item>
+        <item>PREVIOUS</item>
+        <item>PLAYPAUSE</item>
+        <item>SOUND</item>
+    </string-array>
+
     <string-array name="entries_wifi_scan" translatable="false">
         <item>0</item>
         <item>15</item>
@@ -1830,21 +1846,33 @@
 
     <string-array name="lockscreen_widgets_values">  
         <item>0</item>  
-        <item>1</item>
-        <item>2</item>  
-        <item>3</item>
+        <item>1</item>  
     </string-array>
     
     <string-array name="lockscreen_widgets_entries">
         <item>One-Five</item>
-        <item>One-Five Centered</item>
         <item>Six-Eight</item>  
-        <item>Six-Eight Centered</item>
+    </string-array>
+
+    <string-array name="lockscreen_clock_align_entries">
+        <item>@string/lockscreen_clock_align_left</item>
+        <item>@string/lockscreen_clock_align_center</item>
+        <item>@string/lockscreen_clock_align_right</item>
+    </string-array>
+
+    <string-array name="lockscreen_clock_align_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
     <string-array name="navring_dialog_entries">
         <item>None</item>
         <item>Take Screenshot</item>
+        <item>Open IME Switcher</item>
+        <item>Ring/Vib</item>
+        <item>Ring/Silent</item>
+        <item>Ring/Vib/Silent</item>
         <item>Kill App</item>
         <item>Screen Off</item>
         <item>Google Now</item>
@@ -1854,11 +1882,33 @@
     <string-array name="navring_dialog_values">
         <item>none</item>
         <item>screenshot</item>
+        <item>ime_switcher</item>
+        <item>ring_vib</item>
+        <item>ring_silent</item>
+        <item>ring_vib_silent</item>
         <item>killcurrent</item>
         <item>screenoff</item>
         <item>assist</item>
         <item>app</item>
     </string-array>
+
+    <string-array name="pref_navring_amount_entries">
+        <item>1 target</item>
+        <item>2 targets</item>
+        <item>3 targets</item>
+        <item>4 targets</item>
+        <item>5 targets</item>
+    </string-array>
+
+    <string-array name="pref_navring_amount_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+
 
     <!-- Power widget brightness slider -->
     <string-array name="power_widget_brightness_location_entries">
@@ -1912,5 +1962,4 @@
     </string-array>
 
     <!-- **** EXTRA EDITS END **** -->
-
 </resources>

@@ -30,13 +30,12 @@
             android:entryValues="@array/lockscreen_background_values"/>
 
         <ListPreference
-            android:key="lockscreen_widgets"
+            android:key="lockscreen_clock_align"
             android:persistent="false"
-            android:dialogTitle="@string/lockscreen_widgets_title"
-            android:title="@string/lockscreen_widgets_title"
-            android:entries="@array/lockscreen_widgets_entries"
-            android:entryValues="@array/lockscreen_widgets_values"
-            android:summary="@string/lockscreen_widgets_summary" />
+            android:dialogTitle="@string/lockscreen_clock_align_title"
+            android:title="@string/lockscreen_clock_align_title"
+            android:entries="@array/lockscreen_clock_align_entries"
+            android:entryValues="@array/lockscreen_clock_align_values"/>
         
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="lockscreen_text_color"
@@ -75,11 +74,26 @@
             android:title="@string/screen_security_category"
             android:summary="@string/screen_security_summary" />
 
+        <ListPreference
+            android:key="lockscreen_widgets"
+            android:persistent="false"
+            android:dialogTitle="@string/lockscreen_widgets_title"
+            android:title="@string/lockscreen_widgets_title"
+            android:entries="@array/lockscreen_widgets_entries"
+            android:entryValues="@array/lockscreen_widgets_values"
+            android:summary="@string/lockscreen_widgets_summary" />
+
         <Preference
             android:fragment="com.android.settings.cnd.LockscreenTargets"
             android:key="lockscreen_targets"
             android:summary="@string/lockscreen_target_summary"
             android:title="@string/lockscreen_target_title" />
+
+     <PreferenceScreen
+        android:fragment="com.android.settings.cnd.LockscreenButtons"
+        android:key="lockscreen_buttons"
+        android:title="@string/lockscreen_buttons_title"
+        android:summary="@string/lockscreen_buttons_summary" />
 
     </PreferenceCategory>
 
