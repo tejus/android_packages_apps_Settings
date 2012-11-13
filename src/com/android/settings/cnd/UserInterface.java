@@ -56,15 +56,21 @@ public class UserInterface extends SettingsPreferenceFragment {
     public static final String TAG = "UserInterface";
 
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+    private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
     private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
+    private static final String PREF_DISABLE_FULLSCREEN_KEYBOARD = "disable_fullscreen_keyboard";
+    private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
 
     Preference mCustomLabel;
   	CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mDualpane;
     CheckBoxPreference mTabletui;
+    CheckBoxPreference mDisableFullscreenKeyboard;
     Preference mLcdDensity;
+    CheckBoxPreference mShowWifiName;
+    CheckBoxPreference mUseAltResolver;
 
     String mCustomLabelText = null;
 
@@ -95,6 +101,14 @@ public class UserInterface extends SettingsPreferenceFragment {
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
 
+        mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
+        mShowWifiName.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.NOTIFICATION_SHOW_WIFI_SSID, false));
+
+        mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
+        mUseAltResolver.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                        Settings.System.ACTIVITY_RESOLVER_USE_ALT, false));
+
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
         mRecentKillAll.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.RECENT_KILL_ALL_BUTTON, 0) == 1);
@@ -110,6 +124,11 @@ public class UserInterface extends SettingsPreferenceFragment {
 		if (!mTablet) {
             prefs.removePreference(mTabletui);
         }
+
+        mDisableFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_DISABLE_FULLSCREEN_KEYBOARD);
+        mDisableFullscreenKeyboard.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.DISABLE_FULLSCREEN_KEYBOARD, 0) == 1);
+
     }
 
     private void updateCustomLabelTextSummary() {
@@ -130,6 +149,16 @@ public class UserInterface extends SettingsPreferenceFragment {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.RECENT_KILL_ALL_BUTTON, checked ? 1 : 0);
             Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mShowWifiName) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
+        } else if (preference == mUseAltResolver) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.ACTIVITY_RESOLVER_USE_ALT,
+                    ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mDualpane) {
 	            Settings.System.putBoolean(mContext.getContentResolver(),
@@ -173,6 +202,11 @@ public class UserInterface extends SettingsPreferenceFragment {
         } else if (preference == mLcdDensity) {
             ((PreferenceActivity) getActivity())
             .startPreferenceFragment(new DensityChanger(), true);
+            return true;
+        } else if (preference == mDisableFullscreenKeyboard) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DISABLE_FULLSCREEN_KEYBOARD, checked ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

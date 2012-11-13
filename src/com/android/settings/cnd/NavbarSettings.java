@@ -62,7 +62,7 @@ import com.android.settings.util.Helpers;
 import com.android.settings.util.ShortcutPickerHelper;
 import com.android.settings.widgets.NavBarItemPreference;
 import com.android.settings.widgets.SeekBarPreference;
-import com.android.settings.eos.NavRingActions;
+import com.android.settings.cnd.NavRingActions;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -256,6 +256,21 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[1], "");
                 Settings.System.putString(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[2], "");
+
+                mButtonAlpha.setValue(0);
+                mNavigationBarTransparency.setValue(30);
+
+                Settings.System.putFloat(getActivity().getContentResolver(),
+                       Settings.System.NAVIGATION_BAR_TRANSPARENCY, 0.0f);
+                Settings.System.putFloat(getActivity().getContentResolver(),
+                       Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, 0.3f);
+                int intHex = ColorPickerPreference.convertToColorInt("#00ffffff");
+                int intHexBl = ColorPickerPreference.convertToColorInt("#ff000000");
+                Settings.System.putInt(getActivity().getContentResolver(),
+                       Settings.System.SYSTEMUI_NAVBAR_COLOR, intHexBl);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                       Settings.System.NAVIGATION_BAR_TINT, intHex);
+                
                 refreshSettings();
                 return true;
             default:
@@ -616,8 +631,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
                     mPendingIconIndex = index;
                     int width = 100;
                     int height = width;
-                    
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+                    Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     intent.setType("image/*");
                     intent.putExtra("crop", "true");
                     intent.putExtra("scale", true);

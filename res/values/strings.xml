@@ -4480,6 +4480,12 @@
     <string name="lockscreen_buttons_playpause">Play/Pause music</string>
     <string name="lockscreen_buttons_toggle_sound">Toggle sound</string>
 
+    <string name="circles_lock_cat_title">Circle lockscreen settings</string>
+    <string name="circles_lock_bg_color_title">Background color</string>
+    <string name="circles_lock_ring_color_title">Ring color</string>
+    <string name="circles_lock_halo_color_title">Halo color</string>
+    <string name="circles_lock_wave_color_title">Wave color</string>
+
     <!-- Profiles settings  -->
     <string name="profiles_settings_title">Profiles</string>
     <string name="profiles_general_title">General</string>
@@ -4779,8 +4785,12 @@
     <string name="header_summary_clock">Clock location, AM/PM style, color</string>
     <string name="clock_title_enable">Clock style</string>
     <string name="title_clock_ampm_entries">AM/PM style</string>
-    <string name="enable_clock_weekday">Day of the week</string>
-    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
+    <string name="clock_date_display">Date</string>
+    <string name="clock_date_display_summary">Display custom date before the clock</string>
+    <string name="clock_date_style">Date style</string>
+    <string name="clock_date_format">Date format</string>
+    <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
+    <string name="clock_date_string_edittext_summary">Enter string</string>
     <string name="clock_color_title">Clock color</string>
 
     <string name="advanced_settings_title">Device Options</string>
@@ -5100,6 +5110,9 @@
     <!-- Lock screen vibrate settings -->
     <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
     <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>
+
+    <string name="lockscreen_transparent_enabled_title">Transparent</string>
+    <string name="lockscreen_transparent_enabled_head">Transparent lockscreen background (requires reboot)</string>
     
     <string name="brightness_control_cat">Brightness control</string>
     <string name="status_bar_toggle_brightness_slider">Brightness slider</string>
@@ -5120,22 +5133,37 @@
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
     <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
-    <string name="alpha_dialog_title">Set alpha value</string>
     <string name="custom_carrier_label_title">Custom carrier label</string>
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
-	<string name="recent_kill_all">Enable kill-all-button</string>
+    <string name="notification_show_wifi_ssid_title">Show Wifi network name</string>
+    <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
+    <string name="recent_kill_all">Enable kill-all-button</string>
     <string name="recent_kill_all_summary">Displays a button to kill all apps on recents window</string>
     <string name="multipane_ui">Enable Dual panel</string>
     <string name="multipane_ui_summary">This will Enable/Disable Dual panel view (requires reboot)</string>
+    <string name="alt_resolver">Use Alt Default App Grid</string>
+    <string name="alt_resolver_summary">Use Alternate Default App Picker</string>
     <string name="tablet_ui">Force Tablet UI</string>
     <string name="tablet_ui_summary">This will switch to Tablet UI (requires reboot)</string>
+    <string name="disable_fullscreen_keyboard_title">Disable fullscreen keyboard</string>
+    <string name="disable_fullscreen_keyboard_summary">Landscape keyboard will never take up entire screen</string>
 
     <string name="misc_short">Misc</string>
 
     <string name="lockscreen_style_options_title">Lock screen style</string>
     <string name="lockscreen_text_color_title">Lock screen text color</string>
     <string name="lockscreen_interface_options_title">Lock screen interface</string>
+
+    <!-- Title for preference that disables unlock security [CHAR LIMIT=22] -->
+    <string name="unlock_set_unlock_circles_title">Circles</string>
+    <!-- Summary for "Configure lockscreen" when security is disabled [CHAR LIMIT=45] -->
+    <string name="unlock_set_unlock_mode_circles">Circles style</string>
+
+    <!-- Title for preference that disables unlock security [CHAR LIMIT=22] -->
+    <string name="unlock_set_unlock_blackberry_title">BlackBerry</string>
+    <!-- Summary for "Configure lockscreen" when security is disabled [CHAR LIMIT=45] -->
+    <string name="unlock_set_unlock_mode_blackberry">BlackBerry style</string>
 
     <!-- About -->
     <string name="title_about">About Slim</string>
@@ -5188,4 +5216,54 @@
     <string name="high_end_gfx_title">High end graphic effects</string>
     <string name="high_end_gfx_summary">Enable graphic effects disabled on lower end devices</string>
 
+
+    <!--- Volume key cursor control -->
+    <string name="volume_key_cursor_control_title">Volume key cursor control</string>
+    <string name="volume_key_cursor_control_off">Disabled</string>
+    <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
+    <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
+
+    <!-- CM Updater -->
+    <string name="cmupdate_settings_title">CyanogenMod updates</string>
+    <string name="cmupdate_settings_summary">Check for, view or install available updates</string>
+
+    <!--- Sms security limit -->
+    <string name="app_security_title">App security</string>
+    <string name="sms_security_check_limit_title">SMS message limit</string>
+    <string name="sms_security_check_limit_summary">Display an alert dialog to prevent applications from sending SMS messages too frequently. Current limit: %d messages in 15 minutes</string>
+    <string name="sms_security_check_limit_default">30 (Default)</string>
+
+    <!-- Stylus Gestures -->
+    <string name="gestures_settings_title">Stylus gestures</string>
+    <string name="category_spen_title">Stylus gestures</string>
+    <string name="enable_subcat_title">Stylus</string>
+    <string name="enable_spen_title_head">Enable stylus gestures</string>
+    <string name="enable_spen_summary_head">Allows stylus button swipe gestures to launch custom actions. Warning: Applications will not be able to recieve input fired by holding stylus button.</string>
+    <string name="gestures_subcat_title">Gestures</string>
+    <string name="gestures_left_spen_title_head">Left swipe</string>
+    <string name="gestures_left_spen_summary_head">Allows to launch custom action on left swipe</string>
+    <string name="gestures_right_spen_title_head">Right swipe</string>
+    <string name="gestures_right_spen_summary_head">Allows to launch custom action on right swipe</string>
+    <string name="gestures_up_spen_title_head">Up swipe</string>
+    <string name="gestures_up_spen_summary_head">Allows to launch custom action on up swipe</string>
+    <string name="gestures_down_spen_title_head">Down swipe</string>
+    <string name="gestures_down_spen_summary_head">Allows to launch custom action on down swipe</string>
+    <string name="gestures_long_spen_title_head">Long press</string>
+    <string name="gestures_long_spen_summary_head">Allows to launch custom action on long press</string>
+    <string name="gestures_double_spen_title_head">Double tap</string>
+    <string name="gestures_double_spen_summary_head">Allows to launch custom action on double tap</string>
+
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Show icon when using stylus</string>
+    <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
+
+    <!-- Gestures Options -->
+    <string name="gestures_action_empty">No Action</string>
+    <string name="gestures_action_home">Go To Home</string>
+    <string name="gestures_action_back">Emulate Back Key</string>
+    <string name="gestures_action_menu">Emulate Menu Key</string>
+    <string name="gestures_action_search">Invoke Search</string>
+    <string name="gestures_action_recent">Recent Applications</string>
+
+    <!-- **** CYANOGENMOD ADDITIONS END **** -->
 </resources>

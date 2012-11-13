@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.cnd;
+package com.android.settings.performance;
 
 import android.app.ActivityManager;
 import android.app.ActivityManagerNative;
@@ -70,7 +70,17 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
 
 	mHighEndGfx = (CheckBoxPreference) findPreference(KEY_HIGH_END_GFX);
 
-	mHighEndGfx.setChecked((Settings.System.getInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED, 0) == 1));
+	int highEndGfxDefault;
+
+	try{
+            highEndGfxDefault = Settings.System.getInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED);
+	    mHighEndGfx.setChecked(highEndGfxDefault == 1);
+	}
+	catch(Exception e)
+	{
+            highEndGfxDefault = mHighEndGfx.isChecked() ? 1 : 0;
+	    Settings.System.putInt(getContentResolver(),Settings.System.HIGH_END_GFX_ENABLED, highEndGfxDefault);
+	}
     }
     
     @Override
