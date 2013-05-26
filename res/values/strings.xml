@@ -4823,30 +4823,6 @@
     <string name="advanced_settings_title">Device Options</string>
     
     <string name="statusbar_settings_title">Statusbar</string>
-
-    <!-- Performance Settings | Start up tweaks -->
-    <string name="start_up_tweaks">Start-Up Tweaks</string>
-    <string name="startup_settings">Start-up tweaks</string>
-    <string name="init_d_title">Start-Up Tweaks</string>
-    <string name="pt_enable_init_d">Enable start-up tweaks</string>
-    <string name="ps_enable_init_d">Enable/disabe start-up tweaks</string>
-    <string name="pc_init_d">Enable/Disable Tweaks</string>
-    <string name="ps_init_d">Configure tweaks that are run at boot</string>
-    <string name="pc_init_d_tweaks">Customize Tweaks</string>
-    <string name="pt_zipalign">Zipalign apks</string>
-    <string name="ps_zipalign">zipalign any unaligned apps on each boot</string>
-    <string name="pt_enable_sd_boost">Enable SD boost</string>
-    <string name="ps_enable_sd_boost">Enable/disable SD card speed boost</string>
-    <string name="pt_sd_boost">Read ahead value</string>
-    <string name="ps_sd_boost">Set value of read ahead in kb</string>
-    <string name="pt_fix_permissions">Fix permissions</string>
-    <string name="ps_fix_permissions">Fix permissions for apps on each boot</string>
-    <string name="pt_clear_cache">Clear cache</string>
-    <string name="ps_clear_cache">Clear data cache on each boot</string>
-    <string name="pt_enable_sysctl">Enable sysctl</string>
-    <string name="ps_enable_sysctl">Enable sysctl tweaks on boot</string>
-    <string name="pt_enable_cron">Enable scheduled tasks</string>
-    <string name="ps_enable_cron">Enable scheduled cron jobs</string>
     
     <!-- Performance Settings | Processor speed -->
     <string name="processor_title">Processor speed</string>
