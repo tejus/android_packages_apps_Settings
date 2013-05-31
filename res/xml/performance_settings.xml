@@ -40,11 +40,6 @@
     <PreferenceCategory
         android:key="generic_performance_tweaks"
         android:title="@string/general_performance_title">
-        
-        <CheckBoxPreference
-            android:key="pref_disable_bootanimation"
-            android:title="@string/pref_disable_bootanimation_title"
-            android:summary="@string/pref_disable_bootanimation_summary" />
 
     <CheckBoxPreference
         android:key="high_end_gfx"

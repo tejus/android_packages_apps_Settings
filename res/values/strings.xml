@@ -4873,8 +4873,8 @@
     
     <!-- Performance | General -->
     <string name="general_performance_title">General performance tweaks</string>
-    <string name="pref_disable_bootanimation_title">Disable boot animation</string>
-    <string name="pref_disable_bootanimation_summary">Skip the boot animation for faster boot</string>
+    <!-- <string name="pref_disable_bootanimation_title">Disable boot animation</string>
+    <string name="pref_disable_bootanimation_summary">Skip the boot animation for faster boot</string> -->
     
     <!-- Performance Settings | Warning dialog -->
     <string name="performance_settings_warning_header">Warning</string>
